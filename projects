@@ -1,8 +1,0 @@
-# cd and open project folders
-function proj () {
-    cd ~/Development/Atlassian/$1
-    code .
-}
-alias p-jira-frontend="proj jira-frontend"
-alias p-xflow-service="proj xflow-service"
-alias p-xflow-ui="proj xflow-ui"
