@@ -1,5 +1,7 @@
 # cd and open project folders
 function project () {
+    local EDITOR=""
+
     echo "PROJECT_DIR=$PROJECT_DIR"
     if [[ -z "$PROJECT_DIR" ]]
     then
@@ -9,10 +11,16 @@ function project () {
         echo "Changing to project directory"
         cd $PROJECT_DIR/$1
 
-        if [[ ! -z "$PROJECT_EDITOR" ]]
+        if [ -f "./jmake" ]; then
+            EDITOR="$PROJECT_EDITOR_JAVA"
+        else 
+            EDITOR="$PROJECT_EDITOR"
+        fi
+
+        if [[ ! -z "$EDITOR" ]]
         then
-            echo "Opening project in editor"
-            $PROJECT_EDITOR .
+            echo "Opening project in editor $EDITOR"
+            $EDITOR .
         fi
     fi
 }
