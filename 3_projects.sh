@@ -2,13 +2,11 @@
 function project () {
     local EDITOR=""
 
-    echo "PROJECT_DIR=$PROJECT_DIR"
     if [[ -z "$PROJECT_DIR" ]]
     then
         echo "ERROR: Environment variable PROJECT_DIR must be set"
     else
         echo "Switching to project $1"
-        echo "Changing to project directory"
         cd $PROJECT_DIR/$1
 
         if [ -f "./jmake" ]; then
