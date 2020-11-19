@@ -18,5 +18,12 @@ alias reload-develop="echo \"Reloading development customizations\" && source $0
 #   fi
 # }
 
-# Alias to launch a git repo's web page.
-alias gow="xdg-open $(echo $(git config --get remote.origin.url) | sed -E 's/git\@(.*):(.*)\.git/https:\/\/\1\/\2/g')"
+# Launch a git repo's web page.
+function gow(){
+    #alias gow="xdg-open $(echo $(git config --get remote.origin.url) | sed -E 's/git\@(.*):(.*)\.git/https:\/\/\1\/\2/g')"
+    URL=$(git config --get remote.origin.url)
+    URL=$(echo $URL | sed -E 's/git\@(.*):(.*)\.git/https:\/\/\1\/\2/g')
+    echo "Launching git website ${URL}"
+    xdg-open ${URL}
+    echo ''
+}
