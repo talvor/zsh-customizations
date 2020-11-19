@@ -17,3 +17,6 @@ alias reload-develop="echo \"Reloading development customizations\" && source $0
 #     echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}${ZSH_THEME_GIT_PROMPT_CLEAN}${ZSH_THEME_GIT_PROMPT_SUFFIX}"
 #   fi
 # }
+
+# Alias to launch a git repo's web page.
+alias gow="xdg-open $(echo $(git config --get remote.origin.url) | sed -E 's/git\@(.*):(.*)\.git/https:\/\/\1\/\2/g')"

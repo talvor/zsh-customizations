@@ -15,5 +15,9 @@ alias cd-gitlab="cd ~/Development/Personal/Gitlab"
 alias edit-zsh-customizations="code ~/.zsh-customizations"
 alias edit-notes="code ~/Development/Atlassian/Notes"
 
+# Display settings aliases
+alias display-workdesk="autorandr --load workdesk"
+alias display-undocked="autorandr --load undocked"
+
 # Alias to reload this file
 alias reload-aliases="echo \"Reloading alias customizations\" && source $0"
