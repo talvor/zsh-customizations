@@ -20,8 +20,19 @@ alias reload-develop="echo \"Reloading development customizations\" && source $0
 
 # Launch a git repo's web page.
 function gow(){
+    REGEXP="(.*git\@)(.*):(.*)\.git"
     URL=$(git config --get remote.origin.url)
-    URL=$(echo $URL | sed -E 's/git\@(.*):(.*)\.git/https:\/\/\1\/\2/g')
+    URL_HOST=$(echo $URL | sed -E "s/${REGEXP}/\2/g")
+    URL_PATH=$(echo $URL | sed -E "s/${REGEXP}/\3/g")
+
+    if [ $URL_HOST = "bitbucket-mirror-au.internal.atlassian.com" ]; then
+        REGEXP="(.*stash)\/(.*)\/(.*)"
+        URL_HOST="stash.atlassian.com"
+        URL_PATH=$(echo $URL_PATH | sed -E "s/${REGEXP}/projects\/\2\/repos\/\3/g")
+    fi
+
+    URL="https://${URL_HOST}/${URL_PATH}"
+
     echo "Launching git website ${URL}"
     xdg-open ${URL}
     echo ''
