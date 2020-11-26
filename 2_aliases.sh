@@ -1,4 +1,4 @@
-alias edit-develop="code ~/.zsh-customizations/2_aliases.sh"
+alias edit-develop="$PROJECT_EDITOR ~/.zsh-customizations/2_aliases.sh"
 
 # CD Aliases
 alias cd-atlassian="cd ~/Development/Atlassian"
@@ -12,8 +12,8 @@ alias cd-workspace="cd ~/Workspace"
 alias cd-gitlab="cd ~/Development/Personal/Gitlab"
 
 # Aliases to open folders/files in vscode
-alias edit-zsh-customizations="code ~/.zsh-customizations"
-alias edit-notes="code ~/Development/Atlassian/Notes"
+alias edit-zsh-customizations="$PROJECT_EDITOR ~/.zsh-customizations"
+alias edit-notes="$PROJECT_EDITOR ~/Development/Atlassian/Notes"
 
 # Display settings aliases
 alias display-workdesk="autorandr --load workdesk"
