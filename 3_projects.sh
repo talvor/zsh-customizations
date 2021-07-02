@@ -18,7 +18,7 @@ function project () {
         if [[ ! -z "$EDITOR" ]]
         then
             echo "Opening project in editor $EDITOR"
-            $EDITOR .
+            $EDITOR . &
         fi
     fi
 }

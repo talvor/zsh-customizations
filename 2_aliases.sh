@@ -1,4 +1,4 @@
-alias edit-aliases="$PROJECT_EDITOR ~/.zsh-customizations/2_aliases.sh"
+alias edit-aliases="$PROJECT_EDITOR ~/.zsh-customizations/2_aliases.sh &"
 
 # CD Aliases
 alias cd-atlassian="cd ~/Development/Atlassian"
@@ -10,7 +10,7 @@ alias cd-online-courses="cd ~/Development/Atlassian/Online\ Courses"
 alias cd-workspace="cd ~/Workspace"
 
 # Aliases to open folders/files in vscode
-alias edit-zsh-customizations="$PROJECT_EDITOR ~/.zsh-customizations"
+alias edit-zsh-customizations="$PROJECT_EDITOR ~/.zsh-customizations &"
 
 # Alias to reload this file
 alias reload-aliases="echo \"Reloading alias customizations\" && source $0"

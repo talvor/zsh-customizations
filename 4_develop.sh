@@ -1,7 +1,7 @@
 alias edit-develop="code ~/.zsh-customizations/4_develop.sh"
 
 # Start Project aliases
-alias start-jira-frontend="yarn start --ngrok-subdomain phtest --webpack-dev-tool=eval-source-map jira-spa"
+alias start-jira-frontend="yarn start --argo --webpack-dev-tool=eval-source-map jira-spa"
 alias start-jira-monolith="./jmake run explore -Datlassian.webresource.file.cache.disable=true -Datlassian.webresource.disable.minification=true --frontend-resources jira-components/jira-legacy-frontend/greenhopper-frontend/target/classes"
 alias start-jira-monolith-debug="./jmake run explore -Datlassian.webresource.file.cache.disable=true -Datlassian.webresource.disable.minification=true --suspend --frontend-resources jira-components/jira-legacy-frontend/greenhopper-frontend/target/classes"
 
