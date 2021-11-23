@@ -9,10 +9,14 @@ function project () {
         echo "Switching to project $1"
         cd $PROJECT_DIR/$1
 
+        EDITOR="$PROJECT_EDITOR"
+
         if [ -f "./jmake" ]; then
             EDITOR="$PROJECT_EDITOR_JAVA"
-        else 
-            EDITOR="$PROJECT_EDITOR"
+        fi
+
+        if [ -f "./pom.xml" ]; then
+            EDITOR="$PROJECT_EDITOR_JAVA"
         fi
 
         if [[ ! -z "$EDITOR" ]]
@@ -32,3 +36,6 @@ function _project(){
 }
 
 compdef _project project
+
+# Alias to reload this file
+alias reload-project="echo \"Reloading project customizations\" && source $0"

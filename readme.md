@@ -22,8 +22,9 @@ The script `3_projects.sh` loads a `project` alias is a shortcut for switching b
 
 To use this alias the following environment variables need to be set;
 
-* PROJECT_DIR - Path to directory where projects are stored (Required)
-* PROJECT_EDITOR - Path to editors cli command (Optional)
+* PROJECT_DIR (Required) - Path to directory where projects are stored 
+* PROJECT_EDITOR (Optional) - Path to editors cli command 
+* PROJECT_EDITOR_JAVA (Optional) - Path to editor cli command to use for Java projects, determined with the existance of a jmake or pom.xml file
 
 The alias also provides auto completion and lists the directory names in the `PROJECT_DIR`.  So after entering the command `project` hitting `<tab>` will present a list of project names (directory names) and will also autocomplete using this list.
 

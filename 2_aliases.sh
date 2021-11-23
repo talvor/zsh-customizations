@@ -14,3 +14,9 @@ alias edit-zsh-customizations="$PROJECT_EDITOR ~/.zsh-customizations &"
 
 # Alias to reload this file
 alias reload-aliases="echo \"Reloading alias customizations\" && source $0"
+
+# Alias to plantuml https://plantuml.com/
+# plantuml.jar must be installed to ~/.java/ 
+alias plantuml='f() { java -jar ~/.java/plantuml.jar  $1 };f'
+
+alias docker-cleanup="docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm"
