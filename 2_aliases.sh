@@ -19,4 +19,5 @@ alias reload-aliases="echo \"Reloading alias customizations\" && source $0"
 # plantuml.jar must be installed to ~/.java/ 
 alias plantuml='f() { java -jar ~/.java/plantuml.jar  $1 };f'
 
-alias docker-cleanup="docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm"
+alias docker-kill-all="docker ps | cut -d ' ' -f 1 | xargs docker kill"
+alias docker-rm-all="docker ps -a | cut -d ' ' -f 1 | xargs docker rm"
